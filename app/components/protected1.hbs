@@ -1,0 +1,24 @@
+
+<body>	
+<main class="m-3">   
+    <strong>Page No: {{this.currentPage}}</strong> 
+    <br><br>
+{{#each this.logs as |log|}}
+        <p>
+            <b>Id:</b> {{log.id}}
+            <a href=''  {{on "click" (fn this.toggleCompleted "type.keyword")}}><b>Type</b></a>: {{log.type}}
+            <a href =''  {{on "click" (fn this.toggleCompleted "severity")}}><b>Severity:</b></a> {{log.severity}}
+            <a href =''  {{on "click" (fn this.toggleCompleted "source.keyword")}}><b>Source:</b></a> {{log.source}}
+            <a href =''  {{on "click" (fn this.toggleCompleted "eventId")}}><b>EventId:</b></a> {{log.eventId}}
+            <b>Message:</b> {{log.message}}
+            <b>TimeGenerated:</b> {{log.timeGenerated}}
+        </p>
+        <hr>
+    {{/each}}
+    <<LinkTo @route="protectedPage">
+        Go to Home Page
+    </LinkTo>
+</main> 
+</body>
+
+    

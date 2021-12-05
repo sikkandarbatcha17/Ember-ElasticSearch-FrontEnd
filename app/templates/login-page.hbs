@@ -1,0 +1,12 @@
+{{page-title "LoginPage"}}
+
+<body>
+<main class="m-3">
+	Enter Username : <input type="text" name="username" id="username"><br><br>
+	Enter Password : <input type="password" name="password" id="password"><br><br>
+	<button type="submit" {{on 'click' this.validate_user }} class="button">Login</button>
+    {{#if this.error}}
+        <strong><p style="color: red;margin-left: 20px;"> {{this.errormsg}} </p></strong>
+    {{/if}}
+</main>	
+</body>
