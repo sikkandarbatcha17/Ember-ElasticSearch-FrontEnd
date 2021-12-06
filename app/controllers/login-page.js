@@ -39,6 +39,7 @@ export default class LoginController extends Controller {
     if (rsObj.isValidated) {
       cookies.set('username', rsObj.userName);
       cookies.set('isvalidated', rsObj.isValidated);
+      sessionStorage.setItem("username", uname);
       this.set('error', false);
       this.router.transitionTo('protectedPage');
     } else {
