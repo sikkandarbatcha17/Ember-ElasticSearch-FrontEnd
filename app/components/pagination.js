@@ -104,6 +104,7 @@ export default class PaginationComponent extends Component {
   invalidate() {
     cookies.remove('username');
     cookies.remove('isvalidated');
+    localStorage.clear();
     this.router.transitionTo('login-page');
   }
 }
